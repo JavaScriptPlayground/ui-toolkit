@@ -11,28 +11,28 @@
   cursor: pointer;
   user-select: none;
 
-  &[class*="--primary"] {
+  &[class$="--primary"] {
     background-color: #f6f8fa;
     box-shadow: 0px 1px 0px 0px #1f23280a;
     border-color: #d1d9e0;
     color: #25292e;
   }
 
-  &[class*="--default"] {
+  &[class$="--default"] {
     background-color: #f6f8fa;
     box-shadow: 0px 1px 0px 0px #1f23280a;
     border-color: #d1d9e0;
     color: #25292e;
   }
   
-  &[class*="--invisible"] {
+  &[class$="--invisible"] {
     background-color: #f6f8fa;
     box-shadow: 0px 1px 0px 0px #1f23280a;
     border-color: #d1d9e0;
     color: #25292e;
   }
 
-  &[class*="--danger"] {
+  &[class$="--danger"] {
     background-color: #f6f8fa;
     box-shadow: 0px 1px 0px 0px #1f23280a;
     border-color: #d1d9e0;
