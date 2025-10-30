@@ -19,6 +19,7 @@ const copyConfig : esbuild.BuildOptions = {
   outdir: './dist',
   outbase: './src/client',
   entryPoints: [
+    './src/render/**/assets/*',
     './src/components/**/assets/*'
   ],
   plugins: [
@@ -41,10 +42,10 @@ const buildConfig : esbuild.BuildOptions = {
   sourcemap: args.develop ? 'linked' : false,
   sourcesContent: true,
   outdir: './dist',
-  outbase: './src/components',
+  outbase: './src/render',
   entryPoints: [
-    './src/components/**/index.html',
-    './src/components/index.tsx'
+    './src/render/**/index.html',
+    './src/render/index.tsx'
   ],
   plugins: [
     esbuildPluginTransformScriptTags(),

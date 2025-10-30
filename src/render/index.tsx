@@ -1,6 +1,6 @@
 import { render } from '@solid-js/web';
 import { HashRouter, Route } from '@solid-js/router'
-import { Button, buttonTypes } from './button/index.ts';
+import { Button } from '../components/button/index.ts';
 import './index.css'
 
 
