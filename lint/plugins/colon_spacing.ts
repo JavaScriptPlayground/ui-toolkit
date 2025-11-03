@@ -17,9 +17,31 @@ export default {
 
               if (index !== -1 && sectionEnd - sectionStart !== 1) {
                 context.report({
-                  message: `Wrong colon spacing.`,
+                  message: `Wrong colon spacing. Expected 1 space after function.`,
                   range: [sectionStart - 1, sectionEnd + 1],
-                  fix(fixer) {
+                  fix(fixer) : Deno.lint.Fix{
+                    return fixer.replaceTextRange([sectionStart, sectionEnd], ' ');
+                  }
+                });
+              }
+            }
+          }
+        };
+      }
+    },
+    'before-type': {
+      create(context): Deno.lint.LintVisitor {
+        return {
+          TSTypeAnnotation(node): void {
+            if (node.parent.type === 'FunctionDeclaration') {
+              const sectionStart = node.range[0] + 1;
+              const sectionEnd = node.typeAnnotation.range[0];
+
+              if (sectionEnd - sectionStart !== 1) {
+                context.report({
+                  message: `Wrong colon spacing. Expected 1 space before type.`,
+                  range: [sectionStart - 1, sectionEnd + 1],
+                  fix(fixer) : Deno.lint.Fix{
                     return fixer.replaceTextRange([sectionStart, sectionEnd], ' ');
                   }
                 });

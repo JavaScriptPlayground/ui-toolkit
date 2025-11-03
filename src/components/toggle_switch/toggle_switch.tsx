@@ -2,7 +2,7 @@ import { createSignal, type JSXElement } from '@solid-js';
 
 import './index.css';
 
-export function ToggleSwitch(_foo: string, _bar: string) : JSXElement {
+export function ToggleSwitch() : JSXElement {
   const [state, setState] = createSignal(false);
 
   const toggle = () => {
