@@ -12,7 +12,7 @@
   cursor: pointer;
   user-select: none;
 
-  &[class$="--active"] {
+  &[class$='--active'] {
     background-color: #f6f8fa;
     box-shadow: 0px 1px 0px 0px #1f23280a;
     border-color: #d1d9e0;

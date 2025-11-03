@@ -1,9 +1,9 @@
 # Template
+
 <img src="https://github.com/user-attachments/assets/ca0d1fb9-4f77-4b3d-9812-7590c4208193" align="right" width="128">
 
 Template for Frontend development. Build a web page using [SolidJS](https://solidjs.com) as frontend framework and
 [Deno](https://deno.land) as your backend. Clean architecture. No NodeJS required.
-
 
 [![Run Linter](https://github.com/JavaScriptPlayground/Template/actions/workflows/lint.yml/badge.svg)](https://github.com/JavaScriptPlayground/Template/actions/workflows/lint.yml)
 [![Run Unit Tests](https://github.com/JavaScriptPlayground/Template/actions/workflows/test.yml/badge.svg)](https://github.com/JavaScriptPlayground/Template/actions/workflows/test.yml)
@@ -41,32 +41,36 @@ Template for Frontend development. Build a web page using [SolidJS](https://soli
   - `e_to_e` End to End tests for the page.
 
 ## Usage
+
 ### Getting started
-Checkout the template and run initial [`deno install`](#tasks). This will install all the necessary dependencies.
-If you still getting import errors, try reloading the "import registries cache".
+
+Checkout the template and run initial [`deno install`](#tasks). This will install all the necessary dependencies. If you
+still getting import errors, try reloading the "import registries cache".
 
 Next you can build your app using [`deno task build`](#tasks).
 
 After that your app is ready to serve by using [`deno task serve`](#tasks).
 
 ### Tasks
+
 Use `deno task <name_of_the_task>`:
 
-- `build` Build the page. *(recommended)*
-- `build:watch` Build the page with active file watcher. *(recommended)*
+- `build` Build the page. _(recommended)_
+- `build:watch` Build the page with active file watcher. _(recommended)_
 - `build:dev` Build the page for development (without optimization like minification).
 - `build:dev:watch` Build the page for development (without optimization like minification) with active file watcher.
 - `cache-reload` Cache all dependencies.
-- `serve` Serve the build `dist` directory as the page root. *(recommended)*
-- `serve:dev` Serve the build `dist` directory as the page root for development (with verbose logging and directory 
+- `serve` Serve the build `dist` directory as the page root. _(recommended)_
+- `serve:dev` Serve the build `dist` directory as the page root for development (with verbose logging and directory
   listing enabled).
 - `lint` Lint the sourcecode
 - `test` Test your sourcecode (all `.test.ts` file will be checked). A junit report gets generated to
   `./reports/report.xml`
 
 ### GitHub Workflows
-- `deployment.yml` Deploys your current app to GitHub Pages if the name of your repository ends with `.github.io`.
-  (Ex. `github.com/foo/foo.github.io`)
+
+- `deployment.yml` Deploys your current app to GitHub Pages if the name of your repository ends with `.github.io`. (Ex.
+  `github.com/foo/foo.github.io`)
 - `lint.yml` Lints your sourcecode.
 - `test.yml` Runs all the unit tests.
 

@@ -4,8 +4,8 @@ import { bold, green, magenta } from '@std/fmt/colors';
 import { parseArgs } from '@std/cli/parse-args';
 import { copy as esbuildPluginCopy } from './plugins/copy.ts';
 import { transformScriptTags as esbuildPluginTransformScriptTags } from './plugins/transform_script_tags.ts';
-import { denoPlugin as esbuildPluginDeno } from "@deno/esbuild-plugin";
-import { solidPlugin as esbuildPluginSolidJS } from "@esbuild-plugin-solid";
+import { denoPlugin as esbuildPluginDeno } from '@deno/esbuild-plugin';
+import { solidPlugin as esbuildPluginSolidJS } from '@esbuild-plugin-solid';
 
 const args = parseArgs<{
   watch: boolean | undefined,
@@ -13,7 +13,7 @@ const args = parseArgs<{
   logLevel: esbuild.LogLevel
 }>(Deno.args);
 
-const copyConfig : esbuild.BuildOptions = {
+const copyConfig: esbuild.BuildOptions = {
   allowOverwrite: true,
   logLevel: args.logLevel ?? 'info',
   color: true,
@@ -26,9 +26,9 @@ const copyConfig : esbuild.BuildOptions = {
   plugins: [
     esbuildPluginCopy()
   ]
-}
+};
 
-const buildConfig : esbuild.BuildOptions = {
+const buildConfig: esbuild.BuildOptions = {
   allowOverwrite: true,
   logLevel: args.logLevel ?? 'info',
   legalComments: args.develop ? 'inline' : 'none',
@@ -59,9 +59,11 @@ const buildConfig : esbuild.BuildOptions = {
       debug: false
     })
   ]
-}
+};
 
-console.log(bold(`Build process started. Building and bundling for ${magenta(args.develop ? '[Development]' : '[Production]')}.`));
+console.log(
+  bold(`Build process started. Building and bundling for ${magenta(args.develop ? '[Development]' : '[Production]')}.`)
+);
 
 const timestampNow = Date.now();
 
@@ -75,5 +77,5 @@ if (args.watch) {
   ]).then(() => {
     esbuild.stop();
     console.log(green(`esbuild ${esbuild.version} finished build in ${(Date.now() - timestampNow).toString()}ms.`));
-  })
+  });
 }

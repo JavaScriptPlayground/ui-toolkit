@@ -2,8 +2,8 @@ name: Deploy GitHub Pages
 
 on:
   push:
-    branches: ["main"]
-    
+    branches: ['main']
+
   workflow_dispatch:
     inputs:
       page-root-directory:
@@ -17,10 +17,10 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: false
 
-jobs:   
+jobs:
   deploy:
     name: Deploy Pages
     # Deploy only to Github Pages if repository name ends with .github.io
@@ -38,7 +38,7 @@ jobs:
         uses: denoland/setup-deno@v2
         with:
           deno-version: ${{env.deno-version}}
-          
+
       - name: Build page
         run: deno task build
 
@@ -47,13 +47,13 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           path: ${{env.page-root-directory}}
-          
+
       - name: Upload build artifact (Workflow Dispatch)
         if: (github.event.inputs.page-root-directory)
         uses: actions/upload-artifact@v4
         with:
           path: ${{github.event.inputs.page-root-directory}}
-        
+
       - name: Setup pages
         uses: actions/configure-pages@v4
 
@@ -72,4 +72,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v3
-          

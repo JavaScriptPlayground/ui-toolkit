@@ -10,22 +10,22 @@
     "build": {
       "description": "Build the app for production.",
       "command": "deno run -A ./build/esbuild.ts",
-      "dependencies": [ "clear-dist" ]
+      "dependencies": ["clear-dist"]
     },
     "build:watch": {
       "description": "Build the app for production with watcher.",
       "command": "deno run -A ./build/esbuild.ts --watch",
-      "dependencies": [ "clear-dist" ]
+      "dependencies": ["clear-dist"]
     },
     "build:dev": {
       "description": "Build the app for development.",
       "command": "deno run -A ./build/esbuild.ts --develop",
-      "dependencies": [ "clear-dist" ]
+      "dependencies": ["clear-dist"]
     },
     "build:dev:watch": {
       "description": "Build the app for development with watcher.",
       "command": "deno run -A ./build/esbuild.ts --develop --watch",
-      "dependencies": [ "clear-dist" ]
+      "dependencies": ["clear-dist"]
     },
     "cache-reload": {
       "description": "Reload the dependency cache.",
@@ -34,12 +34,12 @@
     "serve": {
       "description": "Run the server on port 8000 for production.",
       "command": "deno run -A ./src/server/index.ts --port=8000",
-      "dependencies": [ "build" ]
+      "dependencies": ["build"]
     },
     "serve:dev": {
       "description": "Run the server on port 8000 for development.",
       "command": "deno run -A ./src/server/index.ts --develop --port=8000",
-      "dependencies": [ "build:dev" ]
+      "dependencies": ["build:dev"]
     },
     "lint": {
       "description": "Run linter.",
@@ -48,7 +48,7 @@
     "test": {
       "description": "Run unit tests. Junit reports will be saved to \"./reports/report.xml\".",
       "command": "deno test -A --check --reload --doc --permit-no-files --junit-path=\"./reports/report.xml\"",
-      "dependencies": [ "clear-reports" ]
+      "dependencies": ["clear-reports"]
     }
   },
   "compilerOptions": {
@@ -70,7 +70,6 @@
     ]
   },
   "lint": {
-    "include": [ "./src/components/toggle_switch/" ],
     "plugins": [
       "./lint/plugins/colon_spacing.ts"
     ],
@@ -107,7 +106,8 @@
   "fmt": {
     "trailingCommas": "never",
     "singleQuote": true,
-    "lineWidth": 120
+    "lineWidth": 120,
+    "typeLiteral.separatorKind": "comma"
   },
   "imports": {
     "@deno/esbuild-plugin": "jsr:@deno/esbuild-plugin@^1.2.0",

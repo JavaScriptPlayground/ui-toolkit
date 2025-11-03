@@ -7,4 +7,4 @@ export const buttonTypes = {
   DANGER: 'danger'
 } as const;
 
-export type ButtonType = ObjectKeys<typeof buttonTypes>
+export type ButtonType = ObjectKeys<typeof buttonTypes>;

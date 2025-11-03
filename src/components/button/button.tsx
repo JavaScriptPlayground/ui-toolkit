@@ -3,9 +3,9 @@ import { type ButtonType, buttonTypes } from './button_types.ts';
 import './index.css';
 
 export function Button(props: {
-  type?: ButtonType;
-  children: JSXElement;
-}): JSXElement {
+  type?: ButtonType,
+  children: JSXElement
+}) : JSXElement {
   const properties = mergeProps({ type: buttonTypes.DEFAULT }, props);
 
   return (
