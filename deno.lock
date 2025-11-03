@@ -3,6 +3,7 @@
   "specifiers": {
     "jsr:@deno/esbuild-plugin@^1.2.0": "1.2.0",
     "jsr:@deno/loader@~0.3.3": "0.3.8",
+    "jsr:@loat-dev/lint-plugins@~0.1.2": "0.1.2",
     "jsr:@std/assert@^1.0.15": "1.0.15",
     "jsr:@std/cli@^1.0.23": "1.0.23",
     "jsr:@std/cli@^1.0.6": "1.0.23",
@@ -37,6 +38,9 @@
     },
     "@deno/loader@0.3.8": {
       "integrity": "4a8611c3f6ee32e2e969ec1deb18aa0576d4b7c16b65b50d97a64f03e592fb0a"
+    },
+    "@loat-dev/lint-plugins@0.1.2": {
+      "integrity": "6a3b623cf5cf2eb5cec4e2d9a80cec0c8cde158039f67dd4e404b3603b1498e8"
     },
     "@std/assert@1.0.15": {
       "integrity": "d64018e951dbdfab9777335ecdb000c0b4e3df036984083be219ce5941e4703b",
