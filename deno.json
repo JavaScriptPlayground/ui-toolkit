@@ -70,6 +70,10 @@
     ]
   },
   "lint": {
+    "include": [ "./src/components/toggle_switch/" ],
+    "plugins": [
+      "./lint/plugins/colon_spacing.ts"
+    ],
     "rules": {
       "tags": [
         "recommended"
@@ -101,10 +105,9 @@
     }
   },
   "fmt": {
-    "options": {
-      "singleQuote": true,
-      "lineWidth": 120
-    }
+    "trailingCommas": "never",
+    "singleQuote": true,
+    "lineWidth": 120
   },
   "imports": {
     "@deno/esbuild-plugin": "jsr:@deno/esbuild-plugin@^1.2.0",

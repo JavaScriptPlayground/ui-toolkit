@@ -1,12 +1,11 @@
-import { mergeProps, type JSXElement } from '@solid-js'
-import { buttonTypes, type ButtonType } from './button_types.ts';
-import './index.css'
-
+import { type JSXElement, mergeProps } from '@solid-js';
+import { type ButtonType, buttonTypes } from './button_types.ts';
+import './index.css';
 
 export function Button(props: {
-  type?: ButtonType,
-  children: JSXElement
-}) : JSXElement {
+  type?: ButtonType;
+  children: JSXElement;
+}): JSXElement {
   const properties = mergeProps({ type: buttonTypes.DEFAULT }, props);
 
   return (
@@ -14,6 +13,8 @@ export function Button(props: {
       type='button'
       class={`ui button button--${properties.type}`}
       data-type={properties.type}
-    >{properties.children}</button>
-  )
+    >
+      {properties.children}
+    </button>
+  );
 }

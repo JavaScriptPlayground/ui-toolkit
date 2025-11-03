@@ -1,21 +1,19 @@
-import { type JSXElement, createSignal } from '@solid-js'
+import { createSignal, type JSXElement } from '@solid-js';
 
-import './index.css'
+import './index.css';
 
-
-export function ToggleSwitch() : JSXElement {
-
+export default function ToggleSwitch(_foo: string, _bar: string): JSXElement {
   const [state, setState] = createSignal(false);
 
   const toggle = () => {
     setState((v) => !v);
     console.log('State is now:', state());
-  }
+  };
 
   return (
     <button
       type='button'
-      class={`ui toggle-switch`}
+      class='ui toggle-switch'
       classList={{
         'toggle-switch--active': state()
       }}
@@ -24,5 +22,5 @@ export function ToggleSwitch() : JSXElement {
     >
       {state() ? 'ON' : 'OFF'}
     </button>
-  )
+  );
 }
