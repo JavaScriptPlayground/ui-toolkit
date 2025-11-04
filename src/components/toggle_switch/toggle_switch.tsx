@@ -19,8 +19,6 @@ export function ToggleSwitch() : JSXElement {
       }}
       data-checked={state()}
       onClick={toggle}
-    >
-      {state() ? 'ON' : 'OFF'}
-    </button>
+    ><div class='toggle-switch__slider'></div></button>
   );
 }

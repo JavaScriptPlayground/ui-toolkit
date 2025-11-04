@@ -1,21 +1,56 @@
 .ui.toggle-switch {
   display: flex;
-  align-items: center;
-  padding: 0 12px;
-  width: 64px;
-  height: 32px;
-  appearance: none;
-  border: 1px solid;
+  padding: 1px;
+  width: 48px;
+  height: 24px;
+  border: 1px solid #3d444d;
   border-radius: 6px;
-  font-size: 14px;
-  font-weight: 500;
+  background-color: #2a313c;
+  appearance: none;
+  outline: none;
   cursor: pointer;
   user-select: none;
+  overflow: hidden;
+  transition: background-color 100ms ease-in-out;
 
   &[class$='--active'] {
-    background-color: #f6f8fa;
-    box-shadow: 0px 1px 0px 0px #1f23280a;
-    border-color: #d1d9e0;
-    color: #25292e;
+    background-color: #316dca;
+    border-color: #316dca;
+
+    .toggle-switch__slider {
+      transform: translateX(24px);
+      background-color: #cdd9e5;
+      border-color: #316dca;
+    }
+  }
+
+  .toggle-switch__slider {
+    position: relative;
+    display: block;
+    height: 100%;
+    aspect-ratio: 1;
+    border-radius: 4px;
+    border: 1px solid #3d444d;
+    background-color: #151b23;
+    transition: transform 100ms ease-in-out;
+
+    &::before,
+    &::after {
+      position: absolute;
+      font-family: monospace;
+      width: 23px;
+      height: 100%;
+      top: 5%;
+    }
+
+    &::before {
+      content: 'I';
+      right: 100%;
+    }
+
+    &::after {
+      content: 'O';
+      left: 100%;
+    }
   }
 }
